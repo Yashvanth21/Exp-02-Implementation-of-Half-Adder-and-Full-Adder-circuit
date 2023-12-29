@@ -1,13 +1,14 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
-
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
+## Name: Yashvanth K
+## Reference number:23011613
+# Exp 03 Implementation of Half Adder and Full Adder circuit
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
 ### Equipments Required:
 Hardware – PCs, Cyclone II , USB flasher
+
 Software – Quartus prime
-Theory
+## Theory
 Adders are digital circuits that carry out addition of numbers.
 
 ### Half Adder
@@ -34,21 +35,45 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+### Half Adder Program:
+```
+module fulladder(sum,a,b,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
+```
+### Full Adder Proogram:
+```
+module fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+xor(sum,a,b,c);
+assign carry=a&b | b&c | a&c;
+endmodule
+```
+### RTL realization
+#### Half Adder:
+![experiment3 halfadder RTL](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/f6d308a8-a007-4c50-9b77-2e0eb6b2d3e8)
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+#### Full Adder:
+![experiment3 fulladder rtl](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/80c6acb0-94cc-4fb6-b9e7-b80695831fc2)
 
+### Truth table:
+#### Half Adder:
+![experiment3 halfadder truthtable](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/eb5a81d3-00af-4155-b4bb-a2a861bcc62f)
 
-### TRUTH TABLE 
+#### Full Adder:
+![experiment3 fulladder truthtable](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/ef0468bd-87c5-40e8-ae4c-b862c95cf2cc)
+
+### Timing Diagram
+#### Half Adder:
+![experiment3 halfadder diagram](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/ed797cef-2726-4b9b-9dcb-3c6249a7f4df)
+
+#### Full Adder:
+![experiment3 fulladder diagram](https://github.com/Ashwathm12/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/138849225/93e0fd62-c414-4b10-b268-18ff12869e34)
+
 
 ### Result:
+To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
